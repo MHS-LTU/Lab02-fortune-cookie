@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
     // Run the system `fortune` command and respond with the message
     child_process.exec('fortune', (error, message) => {
         if(error === null) {
-            res.send(message);
+            res.send(Date() + "<br> Your fortune is: <br>" + message);
         } 
         else {
             res.send('Error: ' + error);
